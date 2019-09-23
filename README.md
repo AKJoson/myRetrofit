@@ -1,5 +1,5 @@
 # 探究Retrofit
-##1. Retrofit的基本使用方式
+## 1. Retrofit的基本使用方式
 * **1.1 构建之一：定义接口.**
 	<p>这个接口比较特殊，包含请求头,请求方法(@GET\@POST),请求体(参数),响应数据类型</p>
 		 public interface IRetrofitService{
@@ -38,9 +38,9 @@
             }
         });
 		
-##2. Retrofit的使用带来了什么好处？
+## 2. Retrofit的使用带来了什么好处？
 * **2.1Retrofit实质上是duiOKhttp的封装，也就是没有okhttp也就没有retrofit，可见最大的亮点在于定义了一个接口，这个接口里面，直接指名了url的后半段，请求方式，设置请求头，请求体，都可以在这里进行定义。也就是okHttp定义请求参数的RequestBody就不必出现了。**
-##3. Retrofit的细节剖析
+## 3. Retrofit的细节剖析
 	//传入这个接口，打开天窗说亮话。深入下去
 	Iservice iService = retrofit.create(IService.class);
 
@@ -255,5 +255,5 @@
     return call;
   }
 
-##4. 总结
+## 4. 总结
 	Retrofit总的来说，使用了一个动态代理，让一个背负着请求方法、参数的 接口方法，经过内部的处理直接和OKhttp暗中交互。请求接口统一定义在一个方法里面，修改Url、参数这种小的需求，能够更加快速、准确的定位。可说是棒极了。
